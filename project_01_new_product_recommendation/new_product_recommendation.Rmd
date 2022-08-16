@@ -3,10 +3,7 @@ title: "Product Pricing Algorithm"
 author: "Ro Verma"
 date: "August 2022"
 output:
-  html_document:
-    df_print: paged
-    theme: flatly
-  pdf_document: default
+    github_document
 params:
   interactive: TRUE
 ---
@@ -32,7 +29,7 @@ source("../00_scripts/plot_product_recommendation.R")
 ```
 
 ```{r}
-bike_orderlines_tbl <- read_rds("../00_data/bike_sales/data_wrangled/bike_orderlines.rds")
+bike_orderlines_tbl <- read_rds("../00_data/bike_orderlines.rds")
 ```
 
 ```{r}
