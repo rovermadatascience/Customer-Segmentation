@@ -3,7 +3,9 @@ title: "Product Pricing Algorithm"
 author: "Ro Verma"
 date: "August 2022"
 output:
-  rmarkdown::github_document
+  html_document:
+    df_print: paged
+    theme: flatly
   pdf_document: default
 params:
   interactive: TRUE
