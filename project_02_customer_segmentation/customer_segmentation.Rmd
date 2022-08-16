@@ -1,0 +1,94 @@
+---
+title: "Customer Segmentation"
+author: "Ro Verma"
+date: "August 2022"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+    theme: flatly
+params:
+  interactive: FALSE
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+    echo = FALSE,
+    message = FALSE,
+    warning = FALSE,
+    out.width = "100%",
+    fig.align = "center")
+```
+
+```{r}
+library(tidyverse)
+library(tidyquant)
+library(broom)
+library(umap)
+library(ggrepel)
+library(plotly)
+```
+
+```{r}
+bike_orderlines_tbl <- read_rds("../00_data/bike_sales/data_wrangled/bike_orderlines.rds")
+```
+
+```{r}
+source("../00_scripts/plot_customer_segmentation.R")
+```
+There are 4 clusters, which are related to customer segments and confirm that there customers have similar purchasing habits.  
+
+## Problem Statement
+
+Marketing would like to increase email campaign engagement by segmenting the customer-base using their buying habbits. 
+
+## Solution Summary
+
+The Data Science Team has identified 4 customer segments. The 4 customer segments were given descriptions based on the top products purchased by customer segments. 
+
+1. Segment 1 Prefrences: Moutain Bikes, Above $3200
+
+2. Segment 2 Prefrences: Road Bikes, Above $3200
+
+3. Segment 3 Prefrences: Road Bikes, Below $3200
+
+4. Segment 4 Prefrences: Both Road Bikes and Moutain Bikes, Below $3200
+
+
+## Customer Preferences
+
+### Heat Map
+
+Our customers include 30 bike shops and many customers have purchasing preferences related to either mountain or road based on the proportion of bikes purchased by category_1 and category_2. 
+
+```{r, fig.height=12}
+# PLOT CUSTOMER HEAT MAP
+plot_customer_heatmap(interactive = params$interactive)
+```
+
+### Customer Segmentation
+
+The 4 customer segments were given descriptions based on the top products purchased by customer segments. 
+
+1. Segment 1 Prefrences: Road Bikes 
+
+2. Segment 2 Prefrences: Moutain Bikes 
+
+3. Segment 3 Prefrences: Road Bikes
+
+4. Segment 4 Prefrences: Both Road Bikes and Moutain Bikes
+
+```{r, fig.height=5, fig.width=7}
+# PLOT CUSTOMER SEGMENTS
+plot_customer_segments(k = 4, seed = 123, interactive = params$interactive)
+```
+
+
+### Customer Preferences By Segment
+
+```{r, fig.height=8}
+# PLOT CUSTOMER BEHAVIOR
+plot_customer_behavior_by_cluster(top_n_products = 10, k = 4, seed = 123, interactive = params$interactive)
+```
+

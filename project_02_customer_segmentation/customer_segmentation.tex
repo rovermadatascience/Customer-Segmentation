@@ -1,0 +1,139 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Customer Segmentation},
+  pdfauthor={Ro Verma},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Customer Segmentation}
+\author{Ro Verma}
+\date{August 2022}
+
+\begin{document}
+\maketitle
+
+There are 4 clusters, which are related to customer segments and confirm
+that there customers have similar purchasing habits.
+
+\hypertarget{problem-statement}{%
+\subsection{Problem Statement}\label{problem-statement}}
+
+Marketing would like to increase email campaign engagement by segmenting
+the customer-base using their buying habbits.
+
+\hypertarget{solution-summary}{%
+\subsection{Solution Summary}\label{solution-summary}}
+
+The Data Science Team has identified 4 customer segments. The 4 customer
+segments were given descriptions based on the top products purchased by
+customer segments.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Segment 1 Prefrences: Moutain Bikes, Above \$3200
+\item
+  Segment 2 Prefrences: Road Bikes, Above \$3200
+\item
+  Segment 3 Prefrences: Road Bikes, Below \$3200
+\item
+  Segment 4 Prefrences: Both Road Bikes and Moutain Bikes, Below \$3200
+\end{enumerate}
+
+\hypertarget{customer-preferences}{%
+\subsection{Customer Preferences}\label{customer-preferences}}
+
+\hypertarget{heat-map}{%
+\subsubsection{Heat Map}\label{heat-map}}
+
+Our customers include 30 bike shops and many customers have purchasing
+preferences related to either mountain or road based on the proportion
+of bikes purchased by category\_1 and category\_2.
+
+\begin{center}\includegraphics[width=1\linewidth]{customer_segmentation_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+\hypertarget{customer-segmentation}{%
+\subsubsection{Customer Segmentation}\label{customer-segmentation}}
+
+The 4 customer segments were given descriptions based on the top
+products purchased by customer segments.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Segment 1 Prefrences: Road Bikes
+\item
+  Segment 2 Prefrences: Moutain Bikes
+\item
+  Segment 3 Prefrences: Road Bikes
+\item
+  Segment 4 Prefrences: Both Road Bikes and Moutain Bikes
+\end{enumerate}
+
+\begin{center}\includegraphics[width=1\linewidth]{customer_segmentation_files/figure-latex/unnamed-chunk-5-1} \end{center}
+
+\hypertarget{customer-preferences-by-segment}{%
+\subsubsection{Customer Preferences By
+Segment}\label{customer-preferences-by-segment}}
+
+\begin{center}\includegraphics[width=1\linewidth]{customer_segmentation_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+\end{document}
